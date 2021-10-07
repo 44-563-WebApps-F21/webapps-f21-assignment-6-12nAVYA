@@ -23,23 +23,27 @@
             var correct = 0;
             var wrong = 0;
     
-        function processPhrase (){
-            console.log("Getting form values")
-            Secret_Phrase = document.getElementById("Secret_Phrase").value
-            Enter_Phrase = document.getElementById("Enter_Phrase").value
-            confirmed = confirm("Check the values? "+Secret_Phrase+" and "+Enter_Phrase)    
-            out = document.getElementById("result")
-            if(Secret_Phrase == Enter_Phrase){
-                correct = correct+1;
-                alert("Access allowed!!");
-                out.innerHTML = "Correct count : "+correct + "<br>"+ "Wrong count : "+wrong;
-            } else {
-                wrong = wrong + 1
-                alert("Access denied!!");
-                out.innerHTML = "Correct count : "+correct + "<br>"+ "Wrong count : "+wrong;
-            }
+            function processPhrase (){
+        console.log("Getting form values")
+        Secret_Phrase = document.getElementById("Secret_Phrase").value
+        Enter_Phrase = document.getElementById("Enter_Phrase").value
+        confirmed = confirm("Check the values? "+Secret_Phrase+" and "+Enter_Phrase)    
+        out = document.getElementById("result")
+        if (wrong<3){
+        if(Secret_Phrase == Enter_Phrase){
+            correct = correct+1;
+            alert("Access allowed!!");
+            out.innerHTML = "Correct count : "+correct + "<br>"+ "Wrong count : "+wrong;
+        } else {
+            wrong = wrong + 1
+            alert("Access denied!!");
+            out.innerHTML = "Correct count : "+correct + "<br>"+ "Wrong count : "+wrong;
         }
-        </script>
+        }else{
+            alert("Account Locked.");
+    }
+    }
+    </script>
 
 <div class="container">
     <img id ="Tarpon" src="Tarpon images3.jpg" onclick="newImage()" height="200" weight="200">    

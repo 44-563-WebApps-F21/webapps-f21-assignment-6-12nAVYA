@@ -6,7 +6,6 @@
     <body>
     <h2>Pass phrase by Navya preethi Taidala</h2>
     
-
     <form>
         <label for="Secret_Phrase">Enter the secret phrase</label>
         <input type="password" id="Secret_Phrase" name="Secret_Phrase" value="Let me in" />
@@ -30,17 +29,17 @@
             Enter_Phrase = document.getElementById("Enter_Phrase").value
             confirmed = confirm("Check the values? "+Secret_Phrase+" and "+Enter_Phrase)    
             out = document.getElementById("result")
-        if(Secret_Phrase == Enter_Phrase){
-            correct = correct+1;
-            alert("Access allowed!!");
-            out.innerHTML = "Correct count : "+correct;
-        } else {
-            wrong = wrong + 1
-            alert("Access denied!!");
-            out.innerHTML = "Wrong count : "+wrong;
+            if(Secret_Phrase == Enter_Phrase){
+                correct = correct+1;
+                alert("Access allowed!!");
+                out.innerHTML = "Correct count : "+correct + "<br>"+ "Wrong count : "+wrong;
+            } else {
+                wrong = wrong + 1
+                alert("Access denied!!");
+                out.innerHTML = "Correct count : "+correct + "<br>"+ "Wrong count : "+wrong;
+            }
         }
-    }
-    </script>
+        </script>
 
 <div class="container">
     <img id ="Tarpon" src="Tarpon images3.jpg" onclick="newImage()" height="200" weight="200">    
